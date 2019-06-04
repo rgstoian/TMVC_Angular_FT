@@ -1,4 +1,5 @@
 # Created by Radu at 04/06/2019
+
 Feature: Test the ToDoMVC Angular web application
 
   Scenario: Check Default interface
@@ -6,6 +7,7 @@ Feature: Test the ToDoMVC Angular web application
     Then The title is visible
     And The new todo item field is visible
     And The footer is visible
+    And A single list is visible
 
 
   Scenario Outline: Add a new ToDo item
@@ -28,9 +30,8 @@ Feature: Test the ToDoMVC Angular web application
     Given the app is open
     When I mark the task: "<tasktocheck>" as done via its checkbox
     Then The task: "<tasktocheck>" is marked as done
-    And The the task: "<tasktocheck>" becomes grey and crossed-through
+    And The task: "<tasktocheck>" becomes grey and crossed-through
     And The remaining task counter decreases
-    And ccc
 
     Examples:
       | tasktocheck |

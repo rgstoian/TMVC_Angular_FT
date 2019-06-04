@@ -1,6 +1,7 @@
 import time
 
 from behave import *
+from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.remote.webelement import WebElement
 
@@ -83,7 +84,7 @@ def step_impl(context, counter_state):
         raise Exception('used verbs for the task counter are: increases, decreases')
 
 
-@step('The the task: "{tasktocheck}" becomes grey and crossed-through')
+@step('The task: "{tasktocheck}" becomes grey and crossed-through')
 def step_impl(context, tasktocheck):
     # Marking an item as done has a transition from black to grey
     # With no markers in the DOM for the transition end, so we wait on it
@@ -104,4 +105,10 @@ def step_impl(context, tasktocheck):
         assert 'line-through' in text_dec
     else:
         # Only tested on FF and Chrome
-        raise Exception('Browser '+browser_name+' not supported.')
+        raise Exception('Browser ' + browser_name + ' not supported.')
+
+
+@step("A single list is visible")
+def step_impl(context):
+    result = context.browser.find_elements(By.CSS_SELECTOR, 'section.todoapp')
+    assert len(result) == 1
