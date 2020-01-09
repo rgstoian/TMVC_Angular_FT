@@ -17,19 +17,27 @@ The test cases are written in Python on a Windows 10 system using JetBrains PyCh
 ## Test Cases
 
 -  **Scenario**: Check Default interface
-    >**Given** the app is open
-    **Then** The title is visible
-    **And** The new todo item field is visible
-    **And** The footer is visible
-    **And** A single list is visible
+	>    **Given** the app is open
+	>
+	>    **Then** The title is visible
+	>
+	>    **And** The new todo item field is visible
+	>
+	>    **And** The footer is visible
+	>
+	>    **And** A single list is visible
 
 
 -  **Scenario Outline**: Add a new ToDo item
     >**Given** the app is open
-    **When** I input: \<task> in the new todo item field
-    **And** Press the Enter Key
-    **Then** The \<task> is created as a to-do item
-    **And** The remaining task counter increases
+    >
+	>    **When** I input: \<task> in the new todo item field
+	>
+	>    **And** Press the Enter Key
+	>
+	>    **Then** The \<task> is created as a to-do item
+	>
+	>    **And** The remaining task counter increases
 
 		  Task Examples:
 	      | Delete Facebook |
@@ -40,11 +48,15 @@ The test cases are written in Python on a Windows 10 system using JetBrains PyCh
 
 
 -  **Scenario Outline**: Mark an item as done
-	  >  **Given** the app is open
-    **When** I mark the task: "\<tasktocheck>" as done via its checkbox
-    **Then** The task: "\<tasktocheck>" is marked as done
-    **And** The task: "\<tasktocheck>" becomes grey and crossed-through
-    **And** The remaining task counter decreases
+	>  **Given** the app is open
+	>
+	>   **When** I mark the task: "\<tasktocheck>" as done via its checkbox
+	>
+	>    **Then** The task: "\<tasktocheck>" is marked as done
+	>
+	>    **And** The task: "\<tasktocheck>" becomes grey and crossed-through
+	>
+	>    **And** The remaining task counter decreases
 
 		   Examples:
 		  | Lawyer Up   |
